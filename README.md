@@ -1,1 +1,1 @@
-# HarisKhan-Portfolio
+This is my portfolio. I have used HTML, CSS with SCSS and Javascript.
