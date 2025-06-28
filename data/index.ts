@@ -108,8 +108,8 @@ export const testimonials = [
   {
     quote:
       "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
-    name: "Khalid Khan",
-    title: "CEO of SAMHAN Technologies",
+    name: "Bachelor of Science in Software Engineering",
+    title: "Riphah International University",
   },
   {
     quote:
@@ -180,21 +180,21 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "Machine Learning Intern - Inotech",
+    title: "Machine Learning Intern - InoTech Solutions",
     desc: "Designed and developed ChatBot for both iOS & Android platforms using Chatbase.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Full Stack Intern - SAMHAN",
+    title: "Full Stack Intern - SAMHAN Technologies",
     desc: "Developed a website for task and employee management, from initial concept to deployment in the organization.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
+    title: "Web Developer Intern - Eziline Software House",
     desc: "Developed and maintained user-facing features using modern frontend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
