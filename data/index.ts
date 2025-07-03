@@ -82,15 +82,15 @@ export const projects = [
     id: 2,
     title: "Weather Monitoring System",
     des: "A Java Swing application demonstrating the Observer Design Pattern with real-time weather updates via OpenWeatherMap APIs.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    img: "/p2.png",
+    iconLists: ["/java.png", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
     link: "/ui.yoom.com",
   },
   {
     id: 3,
     title: "Task & Performance Management System",
     des: "Designed to streamline task workflows, performance tracking, and employee development within organizations..",
-    img: "/p3.svg",
+    img: "/p3.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "/ui.aiimg.com",
   },
@@ -98,7 +98,7 @@ export const projects = [
     id: 4,
     title: "Cognitive Assessment Games Suite",
     des: "A suite of engaging games designed to assess cognitive abilities and promote mental agility.",
-    img: "/p4.svg",
+    img: "/p4.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "/ui.apple.com",
   },
@@ -107,7 +107,7 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
+      "I got my Bachelors Degree in Software Engineering from Riphah International University. Riphah International University is one of the top universities in Pakistan, recognized for producing the best Software Engineers.",
     name: "Bachelor of Science in Software Engineering",
     title: "Riphah International University",
   },
