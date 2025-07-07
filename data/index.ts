@@ -114,26 +114,14 @@ export const testimonials = [
   {
     quote:
       "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
-    name: "Khalid Khan",
-    title: "CEO of SAMHAN Technologies",
+    name: "Intermediate in Computer Science",
+    title: "I.M.C.B F-11/3",
   },
   {
     quote:
       "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
-    name: "Khalid Khan",
-    title: "CEO of SAMHAN Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
-    name: "Khalid Khan",
-    title: "CEO of SAMHAN Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
-    name: "Khalid Khan",
-    title: "CEO of SAMHAN Technologies",
+    name: "Metriculation in Computer Science",
+    title: "I.M.C.B F-7/3",
   },
 ];
 
