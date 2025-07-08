@@ -1,7 +1,7 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Qualifications", link: "#qualifications" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -75,7 +75,7 @@ export const projects = [
     title: "Text Cipher Application",
     des: " A modern Python GUI app for encrypting and decrypting text using various ciphers. Real-time decryption, light/dark mode, tabbed UI, input validation.",
     img: "/p1.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    iconLists: ["/python.svg", "/flutter.svg", "/encryption.svg"],
     link: "/ui.earth.com",
   },
   {
@@ -83,7 +83,7 @@ export const projects = [
     title: "Weather Monitoring System",
     des: "A Java Swing application demonstrating the Observer Design Pattern with real-time weather updates via OpenWeatherMap APIs.",
     img: "/p2.png",
-    iconLists: ["/java.png", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    iconLists: ["/java.png", "/api.svg"],
     link: "/ui.yoom.com",
   },
   {
@@ -91,7 +91,7 @@ export const projects = [
     title: "Task & Performance Management System",
     des: "Designed to streamline task workflows, performance tracking, and employee development within organizations..",
     img: "/p3.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    iconLists: ["/php2.svg", "/html.svg", "/css.svg", "/javascript.svg", "/mysql.svg"],
     link: "/ui.aiimg.com",
   },
   {
@@ -99,29 +99,32 @@ export const projects = [
     title: "Cognitive Assessment Games Suite",
     des: "A suite of engaging games designed to assess cognitive abilities and promote mental agility.",
     img: "/p4.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    iconLists: ["/python.svg", "/pygame.png"],
     link: "/ui.apple.com",
   },
 ];
 
-export const testimonials = [
+export const qualifications = [
   {
     quote:
-      "I got my Bachelors Degree in Software Engineering from Riphah International University. Riphah International University is one of the top universities in Pakistan, recognized for producing the best Software Engineers.",
+      "Riphah International University is a prestigious institution recognized by the Higher Education Commission of Pakistan. The university's Software Engineering program is accredited and follows international standards, providing comprehensive education in software development, system design, and modern programming technologies.",
     name: "Bachelor of Science in Software Engineering",
     title: "Riphah International University",
+    image: "/Riphah.jpg",
   },
   {
     quote:
-      "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
+      "I.M.C.B F-11/3 is a well-established educational institution known for its academic excellence in computer science education. The intermediate program provides a strong foundation in programming fundamentals, data structures, and computer systems, preparing students for advanced studies in technology.",
     name: "Intermediate in Computer Science",
     title: "I.M.C.B F-11/3",
+    image: "/F-11.png",
   },
   {
     quote:
-      "Collaborating with Haris was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Haris's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Haris is the ideal partner.",
+      "I.M.C.B F-7/3 offers a comprehensive computer science curriculum at the matriculation level, focusing on developing strong analytical and problem-solving skills. The institution emphasizes practical learning and modern computing concepts, setting a solid foundation for future academic pursuits.",
     name: "Metriculation in Computer Science",
     title: "I.M.C.B F-7/3",
+    image: "/F-7.png",
   },
 ];
 
@@ -193,13 +196,16 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/haris936hk"
   },
   {
     id: 2,
-    img: "/twit.svg",
+    img: "/link.svg",
+    link: "https://www.linkedin.com/in/haris936hk/"
   },
   {
     id: 3,
-    img: "/link.svg",
+    img: "/insta.svg",
+    link: "https://www.instagram.com/haris936.hk/"
   },
 ];
