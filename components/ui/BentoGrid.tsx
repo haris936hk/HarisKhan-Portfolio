@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
-import dynamic from "next/dynamic";
+import Player from "lottie-react";
 
 import { cn } from "@/lib/utils";
 
@@ -12,8 +12,7 @@ import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 
-// Replace static import of Lottie with dynamic import
-const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
+// Remove any reference to 'dynamic' and commented dynamic import code
 
 export const BentoGrid = ({
   className,
@@ -186,7 +185,7 @@ export const BentoGridItem = ({
                   }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Player autoplay={copied} loop={copied} src={animationData} style={{ height: 200, width: 400 }} />
               </div>
 
               <MagicButton
