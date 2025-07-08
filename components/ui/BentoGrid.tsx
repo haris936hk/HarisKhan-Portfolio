@@ -3,6 +3,7 @@ import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
 import Player from "lottie-react";
+import dynamic from "next/dynamic";
 
 import { cn } from "@/lib/utils";
 
@@ -76,6 +77,8 @@ export const BentoGridItem = ({
       setCopied(true);
     }
   };
+
+  const LottieConfetti = dynamic(() => import("../LottieConfetti"), { ssr: false });
 
   return (
     <div
@@ -185,7 +188,7 @@ export const BentoGridItem = ({
                   }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Player autoplay={copied} loop={copied} src={animationData} style={{ height: 200, width: 400 }} />
+                <LottieConfetti autoplay={copied} loop={copied} />
               </div>
 
               <MagicButton
