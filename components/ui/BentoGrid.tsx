@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
-import Player from "lottie-react";
+// import Player from "lottie-react";
 import dynamic from "next/dynamic";
 
 import { cn } from "@/lib/utils";
