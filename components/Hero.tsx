@@ -6,22 +6,25 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      // Scroll to the about section with proper offset for the navbar
-      const navbarHeight = 120; // Increased offset to ensure button is hidden
-      
-      const elementTop = aboutSection.offsetTop;
-      const scrollPosition = elementTop - navbarHeight;
-      
-      // Add additional offset to ensure Hero component is completely out of view
-      const heroHeight = window.innerHeight; // Full viewport height
-      const finalScrollPosition = scrollPosition + heroHeight * 0.2; // Add 20% of viewport height
-      
-      window.scrollTo({
-        top: finalScrollPosition,
-        behavior: 'smooth'
-      });
+    // Check if we're in a browser environment
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        // Scroll to the about section with proper offset for the navbar
+        const navbarHeight = 120; // Increased offset to ensure button is hidden
+        
+        const elementTop = aboutSection.offsetTop;
+        const scrollPosition = elementTop - navbarHeight;
+        
+        // Add additional offset to ensure Hero component is completely out of view
+        const heroHeight = window.innerHeight; // Full viewport height
+        const finalScrollPosition = scrollPosition + heroHeight * 0.2; // Add 20% of viewport height
+        
+        window.scrollTo({
+          top: finalScrollPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   };
   return (
