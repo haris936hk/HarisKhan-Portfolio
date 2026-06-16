@@ -15,11 +15,19 @@ const Certificates = () => {
         My <span className="text-purple">certificates</span>
       </h1>
 
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-16 gap-y-6 mt-10">
+      <div
+        className="flex flex-nowrap overflow-x-auto sm:flex-wrap sm:overflow-x-visible sm:items-center sm:justify-center pl-4 pr-0 sm:p-4 gap-4 sm:gap-x-16 sm:gap-y-6 mt-10 [&::-webkit-scrollbar]:hidden"
+        style={{
+          scrollSnapType: "x mandatory",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+        } as React.CSSProperties}
+      >
         {certificates.map((item) => (
           <div
-            className="lg:min-h-[22rem] h-[20rem] flex items-center justify-center sm:w-80 w-[80vw] cursor-pointer"
+            className="lg:min-h-[22rem] h-[20rem] flex-shrink-0 sm:flex-shrink flex items-center justify-center sm:w-80 w-[80vw] cursor-pointer"
             key={item.id}
+            style={{ scrollSnapAlign: "start" }}
             onClick={() => window.open(item.img, "_blank", "noopener,noreferrer")}
           >
             <PinContainer
