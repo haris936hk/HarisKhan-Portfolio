@@ -1,7 +1,7 @@
 "use client";
 
 import { projects } from "@/data";
-import { PinContainer } from "./ui/Pin";
+
 
 const RecentProjects = () => {
   return (
@@ -10,25 +10,13 @@ const RecentProjects = () => {
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-16 gap-y-6 mt-10">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[38rem] h-[30rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="w-72 sm:w-80 p-4 rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1]"
             key={item.id}
+            style={{ background: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)" }}
           >
-            <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
-              className="w-72 sm:w-80"
-            >
-
-              <div className="w-full rounded-xl mb-4 overflow-hidden" style={{ height: "12rem" }}>
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base">
                 {item.title}
@@ -60,8 +48,7 @@ const RecentProjects = () => {
                 </div>
 
               </div>
-            </PinContainer>
-          </div>
+            </div>
         ))}
       </div>
     </div>
