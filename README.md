@@ -12,6 +12,14 @@ A stunning, interactive portfolio website built with Next.js, featuring modern U
 - **🎯 Interactive Components**: Hover effects, reveal animations, and dynamic content
 - **📧 Contact Integration**: Direct email functionality with copy-to-clipboard
 
+## Certificate previews
+
+Certificate cards lazy-load pre-generated first-page WebP images. Original PDFs are opened only when a card is explicitly clicked; image failures display “Preview unavailable” without downloading a PDF.
+
+To add or replace a certificate, put its PDF in `public/certificates/`, run `npm run generate:certificate-previews` with Node 24 after installing dev dependencies, and add its metadata to `data/index.ts`. Keep `img` pointing to the PDF and set `preview` to `/certificates/previews/<same-basename>.webp`, preserving filename case. Include the generated assets in the change.
+
+The generator sequentially renders every source PDF to a 576-pixel-wide, white-background WebP using PDF.js and `@napi-rs/canvas`. It exits nonzero on failure and overwrites matching previews without deleting stale files. Generation is explicit, not part of the build or browser runtime; deployment serves the checked-in images without native PDF rendering.
+
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 with TypeScript

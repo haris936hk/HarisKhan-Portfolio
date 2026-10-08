@@ -85,4 +85,24 @@
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
   }
+
+  .section-visibility {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+
+  @keyframes hero-headline-enter {
+    from {
+      transform: translateY(6px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-headline-enter {
+      animation: hero-headline-enter 240ms ease-out;
+    }
+  }
 }

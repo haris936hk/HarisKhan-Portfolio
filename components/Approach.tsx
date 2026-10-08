@@ -3,11 +3,16 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
+import dynamic from "next/dynamic";
+
+const CanvasRevealEffect = dynamic(
+  () => import("./ui/CanvasRevealEffect").then((m) => m.CanvasRevealEffect),
+  { ssr: false, loading: () => null }
+);
 
 const Approach = () => {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-20 section-visibility">
       <h1 className="heading">
         My <span className="text-purple">approach</span>
       </h1>

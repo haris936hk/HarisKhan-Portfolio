@@ -1,16 +1,22 @@
 "use client";
-
-import React from "react";
-import dynamic from "next/dynamic";
+import React, { useState } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 import { certificates } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import CertificatePreview from "./CertificatePreview";
+import CertificateCard from "./CertificateCard";
+import MagicButton from "./MagicButton";
 
-const PDFThumbnail = dynamic(() => import("./PDFThumbnail"), { ssr: false });
+const INITIAL_VISIBLE_COUNT = 8;
 
 const Certificates = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleCertificates = showAll
+    ? certificates
+    : certificates.slice(0, INITIAL_VISIBLE_COUNT);
+
   return (
-    <div className="py-20" id="certificates">
+    <div className="py-20 section-visibility" id="certificates">
       <h1 className="heading">
         My <span className="text-purple">certificates</span>
       </h1>
@@ -23,24 +29,18 @@ const Certificates = () => {
           msOverflowStyle: "none",
         } as React.CSSProperties}
       >
-        {certificates.map((item) => (
-          <div
-            className="lg:min-h-[22rem] h-[20rem] flex-shrink-0 sm:flex-shrink flex items-center justify-center sm:w-80 w-[80vw] cursor-pointer"
-            key={item.id}
-            style={{ scrollSnapAlign: "start" }}
-            onClick={() => window.open(item.img, "_blank", "noopener,noreferrer")}
-          >
+        {visibleCertificates.map((item) => (
+          <CertificateCard key={item.id} sourceUrl={item.img}>
             <PinContainer
               title="View Certificate"
               href={item.link}
               className="w-64 sm:w-72"
             >
-              {/* PDF thumbnail rendered client-side via pdfjs-dist */}
               <div
                 className="w-full rounded-xl mb-4 overflow-hidden"
                 style={{ height: "9rem" }}
               >
-                <PDFThumbnail url={item.img} />
+                <CertificatePreview key={item.preview} src={item.preview} title={item.title} />
               </div>
 
               {/* Title */}
@@ -75,9 +75,25 @@ const Certificates = () => {
                 </a>
               </div>
             </PinContainer>
-          </div>
+          </CertificateCard>
         ))}
       </div>
+
+      {certificates.length > INITIAL_VISIBLE_COUNT && (
+        <div className="flex justify-center mt-12">
+          <MagicButton
+            title={
+              showAll
+                ? "Show Less"
+                : `View All Certificates (${certificates.length})`
+            }
+            icon={<FaLocationArrow />}
+            position="right"
+            handleClick={() => setShowAll(!showAll)}
+            otherClasses="!bg-[#161A31]"
+          />
+        </div>
+      )}
     </div>
   );
 };

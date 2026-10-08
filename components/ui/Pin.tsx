@@ -20,14 +20,16 @@ export const PinContainer = ({
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)"
   );
+  const [isHovered, setIsHovered] = useState(false);
 
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
+    setIsHovered(true);
   };
   const onMouseLeave = () => {
     setTransform("translate(-50%,-50%) rotateX(0deg) scale(1)");
+    setIsHovered(false);
   };
-
   return (
     <div
       className={cn(
@@ -54,7 +56,7 @@ export const PinContainer = ({
           <div className={cn(" relative z-50 ", className)}>{children}</div>
         </div>
       </div>
-      <PinPerspective title={title} href={href} />
+      {isHovered && <PinPerspective title={title} href={href} />}
     </div>
   );
 };
@@ -68,7 +70,7 @@ export const PinPerspective = ({
 }) => {
   return (
     // change w-96 to w-full
-    <motion.div className="pointer-events-none w-full h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
+    <motion.div className="pointer-events-none w-full h-80 flex items-center justify-center opacity-100 z-[60] transition duration-500">
       <div className=" w-full h-full -mt-7 flex-none  inset-0">
         <div className="absolute top-0 inset-x-0  flex justify-center">
           <a

@@ -1,10 +1,8 @@
-"use client";
-
 import { projects } from "@/data";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20" id="projects">
+    <div className="py-20 section-visibility" id="projects">
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
@@ -50,7 +48,15 @@ const RecentProjects = () => {
                       transform: `translateX(-${5 * index + 2}px)`,
                     }}
                   >
-                    <img src={icon} alt="icon5" className="p-2" />
+                    <img
+                      src={icon}
+                      alt="tech stack icon"
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                      className="p-2"
+                    />
                   </div>
                 ))}
               </div>

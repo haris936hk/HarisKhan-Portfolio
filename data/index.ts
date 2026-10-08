@@ -14,7 +14,7 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/b1.webp",
     spareImg: "",
   },
   {
@@ -44,7 +44,7 @@ export const gridItems = [
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
     titleClassName: "justify-start",
-    img: "/grid.svg",
+    img: "/grid.webp",
     spareImg: "/b4.svg",
   },
 
@@ -55,8 +55,8 @@ export const gridItems = [
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
+    img: "/b5.webp",
+    spareImg: "/grid.webp",
   },
   {
     id: 6,
@@ -153,6 +153,7 @@ export const certificates = [
     issuer: "Coursera Project Network",
     date: "December 2021",
     img: "/certificates/Coursera_YC23A7KLLRQC.pdf",
+    preview: "/certificates/previews/Coursera_YC23A7KLLRQC.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/YC23A7KLLRQC",
   },
   // 2022
@@ -162,6 +163,7 @@ export const certificates = [
     issuer: "Coursera Project Network",
     date: "July 2022",
     img: "/certificates/Coursera_RGSXRU5XGXCV.pdf",
+    preview: "/certificates/previews/Coursera_RGSXRU5XGXCV.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/RGSXRU5XGXCV",
   },
   {
@@ -170,6 +172,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "July 2022",
     img: "/certificates/Coursera_V7AU99QHKGQ7.pdf",
+    preview: "/certificates/previews/Coursera_V7AU99QHKGQ7.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/V7AU99QHKGQ7",
   },
   {
@@ -178,6 +181,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "July 2022",
     img: "/certificates/Coursera_RYVDYP98MK3J.pdf",
+    preview: "/certificates/previews/Coursera_RYVDYP98MK3J.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/RYVDYP98MK3J",
   },
   // 2023
@@ -187,6 +191,7 @@ export const certificates = [
     issuer: "Coursera Project Network",
     date: "January 2023",
     img: "/certificates/Coursera_JENXTJQ9W8SU.pdf",
+    preview: "/certificates/previews/Coursera_JENXTJQ9W8SU.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/JENXTJQ9W8SU",
   },
   {
@@ -195,6 +200,7 @@ export const certificates = [
     issuer: "IBM · Coursera",
     date: "August 2023",
     img: "/certificates/Coursera_4AA7SB5K7WRN.pdf",
+    preview: "/certificates/previews/Coursera_4AA7SB5K7WRN.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/4AA7SB5K7WRN",
   },
   {
@@ -203,6 +209,7 @@ export const certificates = [
     issuer: "IBM · Coursera",
     date: "August 2023",
     img: "/certificates/Coursera_YS7C9Z2EHLZG.pdf",
+    preview: "/certificates/previews/Coursera_YS7C9Z2EHLZG.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/YS7C9Z2EHLZG",
   },
   {
@@ -211,6 +218,7 @@ export const certificates = [
     issuer: "IBM · Coursera",
     date: "August 2023",
     img: "/certificates/Coursera_PVRX55SY76RG.pdf",
+    preview: "/certificates/previews/Coursera_PVRX55SY76RG.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/PVRX55SY76RG",
   },
   {
@@ -219,6 +227,7 @@ export const certificates = [
     issuer: "IBM · Coursera",
     date: "August 2023",
     img: "/certificates/Coursera_QPJPJZL6UUKE.pdf",
+    preview: "/certificates/previews/Coursera_QPJPJZL6UUKE.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/QPJPJZL6UUKE",
   },
   {
@@ -227,6 +236,7 @@ export const certificates = [
     issuer: "IBM · Coursera",
     date: "July 2023",
     img: "/certificates/Coursera_KBVUZ26HWKV7.pdf",
+    preview: "/certificates/previews/Coursera_KBVUZ26HWKV7.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/KBVUZ26HWKV7",
   },
   {
@@ -235,6 +245,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "November 2023",
     img: "/certificates/Coursera_6ZUW5AB9L9RH.pdf",
+    preview: "/certificates/previews/Coursera_6ZUW5AB9L9RH.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/6ZUW5AB9L9RH",
   },
   {
@@ -243,6 +254,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "November 2023",
     img: "/certificates/Coursera_VPX697SKWUKD.pdf",
+    preview: "/certificates/previews/Coursera_VPX697SKWUKD.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/VPX697SKWUKD",
   },
   {
@@ -251,6 +263,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "November 2023",
     img: "/certificates/Coursera_PVVKYAFAVXA6.pdf",
+    preview: "/certificates/previews/Coursera_PVVKYAFAVXA6.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/PVVKYAFAVXA6",
   },
   {
@@ -259,6 +272,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "December 2023",
     img: "/certificates/Coursera_VPJTJ83U63VY.pdf",
+    preview: "/certificates/previews/Coursera_VPJTJ83U63VY.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/VPJTJ83U63VY",
   },
   {
@@ -267,6 +281,7 @@ export const certificates = [
     issuer: "Coursera Project Network",
     date: "December 2023",
     img: "/certificates/Coursera_G5GCNWYP9FCB.pdf",
+    preview: "/certificates/previews/Coursera_G5GCNWYP9FCB.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/G5GCNWYP9FCB",
   },
   // 2024
@@ -276,6 +291,7 @@ export const certificates = [
     issuer: "Meta · Coursera",
     date: "April 2024",
     img: "/certificates/Coursera_5YHZKRRGHY3R.pdf",
+    preview: "/certificates/previews/Coursera_5YHZKRRGHY3R.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/5YHZKRRGHY3R",
   },
   {
@@ -284,6 +300,7 @@ export const certificates = [
     issuer: "Meta · Coursera",
     date: "April 2024",
     img: "/certificates/Coursera_A3PL9BGD6GJM.pdf",
+    preview: "/certificates/previews/Coursera_A3PL9BGD6GJM.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/A3PL9BGD6GJM",
   },
   {
@@ -292,6 +309,7 @@ export const certificates = [
     issuer: "Meta · Coursera",
     date: "May 2024",
     img: "/certificates/Coursera_EG244U99ZN3G.pdf",
+    preview: "/certificates/previews/Coursera_EG244U99ZN3G.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/EG244U99ZN3G",
   },
   {
@@ -300,6 +318,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "May 2024",
     img: "/certificates/Coursera_9ZYQXK3S68KL.pdf",
+    preview: "/certificates/previews/Coursera_9ZYQXK3S68KL.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/9ZYQXK3S68KL",
   },
   {
@@ -308,6 +327,7 @@ export const certificates = [
     issuer: "Coursera Project Network",
     date: "May 2024",
     img: "/certificates/Coursera_PTRFB9RNS6G8.pdf",
+    preview: "/certificates/previews/Coursera_PTRFB9RNS6G8.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/PTRFB9RNS6G8",
   },
   {
@@ -316,6 +336,7 @@ export const certificates = [
     issuer: "Coursera Project Network",
     date: "May 2024",
     img: "/certificates/Coursera_SSHMHDYEJ4XF.pdf",
+    preview: "/certificates/previews/Coursera_SSHMHDYEJ4XF.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/SSHMHDYEJ4XF",
   },
   {
@@ -324,6 +345,7 @@ export const certificates = [
     issuer: "Coursera",
     date: "May 2024",
     img: "/certificates/Coursera_G2H6DMBMMNJP.pdf",
+    preview: "/certificates/previews/Coursera_G2H6DMBMMNJP.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/G2H6DMBMMNJP",
   },
   {
@@ -332,6 +354,7 @@ export const certificates = [
     issuer: "Meta · Coursera",
     date: "May 2024",
     img: "/certificates/Coursera_CR7W7YL8CENU.pdf",
+    preview: "/certificates/previews/Coursera_CR7W7YL8CENU.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/CR7W7YL8CENU",
   },
   {
@@ -340,6 +363,7 @@ export const certificates = [
     issuer: "Cisco Networking Academy",
     date: "October 2024",
     img: "/certificates/JavaScriptEssentials1Update20250726-30-sxqykr.pdf",
+    preview: "/certificates/previews/JavaScriptEssentials1Update20250726-30-sxqykr.webp",
     link: "#",
   },
   {
@@ -348,6 +372,7 @@ export const certificates = [
     issuer: "Cisco Networking Academy",
     date: "November 2024",
     img: "/certificates/PythonEssentials1Update20250726-30-b50xj4.pdf",
+    preview: "/certificates/previews/PythonEssentials1Update20250726-30-b50xj4.webp",
     link: "#",
   },
   {
@@ -356,6 +381,7 @@ export const certificates = [
     issuer: "Cisco Networking Academy",
     date: "November 2024",
     img: "/certificates/PythonEssentials2Update20250726-31-4e7x63.pdf",
+    preview: "/certificates/previews/PythonEssentials2Update20250726-31-4e7x63.webp",
     link: "#",
   },
   {
@@ -364,6 +390,7 @@ export const certificates = [
     issuer: "Cisco Networking Academy",
     date: "December 2024",
     img: "/certificates/JavaScriptEssentials2Update20250726-32-fmcado.pdf",
+    preview: "/certificates/previews/JavaScriptEssentials2Update20250726-32-fmcado.webp",
     link: "#",
   },
   {
@@ -372,6 +399,7 @@ export const certificates = [
     issuer: "Michigan State University · Coursera",
     date: "September 2024",
     img: "/certificates/Coursera_EUWJR99A12QP.pdf",
+    preview: "/certificates/previews/Coursera_EUWJR99A12QP.webp",
     link: "https://www.coursera.org/account/accomplishments/verify/EUWJR99A12QP",
   },
   // 2025
@@ -381,6 +409,7 @@ export const certificates = [
     issuer: "Cisco Networking Academy",
     date: "May 2025",
     img: "/certificates/NetworkingBasicsUpdate20250726-30-30bmv5.pdf",
+    preview: "/certificates/previews/NetworkingBasicsUpdate20250726-30-30bmv5.webp",
     link: "#",
   },
   {
@@ -389,6 +418,7 @@ export const certificates = [
     issuer: "Cisco Networking Academy",
     date: "May 2025",
     img: "/certificates/I2CSUpdate20250726-30-rphddi.pdf",
+    preview: "/certificates/previews/I2CSUpdate20250726-30-rphddi.webp",
     link: "#",
   },
 ];

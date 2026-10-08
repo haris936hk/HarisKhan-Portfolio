@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
@@ -186,8 +186,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcDashAnimateTime((e) => defaultProps.arcTime);
 
     globeRef.current
-      .pointsData(data)
-      .pointColor((e) => (e as { color: string }).color)
+      .pointsData(globeData)
+      .pointColor((d) => (d as NonNullable<typeof globeData>[number]).color(0))
       .pointsMerge(true)
       .pointAltitude(0.0)
       .pointRadius(2);
@@ -236,7 +236,7 @@ export function WebGLRendererConfig() {
   useEffect(() => {
     // Check if we're in a browser environment
     if (typeof window !== 'undefined') {
-      gl.setPixelRatio(window.devicePixelRatio);
+      gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     }
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
@@ -247,10 +247,24 @@ export function WebGLRendererConfig() {
 
 export function World(props: WorldProps) {
   const { globeConfig } = props;
-  const scene = new Scene();
-  scene.fog = new Fog(0xffffff, 400, 2000);
+  const scene = useMemo(() => {
+    const s = new Scene();
+    s.fog = new Fog(0xffffff, 400, 2000);
+    return s;
+  }, []);
+  const camera = useMemo(() => new PerspectiveCamera(50, aspect, 180, 1800), []);
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+    <Canvas
+      scene={scene}
+      camera={camera}
+      dpr={[1, 2]}
+      gl={{
+        powerPreference: "high-performance",
+        antialias: false,
+        preserveDrawingBuffer: false,
+        alpha: true,
+      }}
+    >
       <WebGLRendererConfig />
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight

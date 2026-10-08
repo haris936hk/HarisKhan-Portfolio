@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 import { companies, qualifications } from "@/data";
@@ -7,7 +5,7 @@ import { InfiniteMovingCards } from "./ui/InfiniteCards";
 
 const Clients = () => {
   return (
-    <section id="qualifications" className="py-20">
+    <section id="qualifications" className="py-20 section-visibility">
       <h1 className="heading">
         My
         <span className="text-purple"> Qualifications</span>
@@ -32,13 +30,20 @@ const Clients = () => {
                 <img
                   src={company.img}
                   alt={company.name}
-                  className="md:w-10 w-5"
+                  width={40}
+                  height={40}
+                  loading="lazy"
+                  decoding="async"
+                  className="md:w-10 w-5 object-contain"
                 />
                 <img
                   src={company.nameImg}
-                  alt={company.name}
+                  alt={`${company.name} logo`}
                   width={company.id === 4 || company.id === 5 ? 100 : 150}
-                  className="md:w-24 w-20"
+                  height={40}
+                  loading="lazy"
+                  decoding="async"
+                  className="md:w-24 w-20 object-contain"
                 />
               </div>
             </React.Fragment>

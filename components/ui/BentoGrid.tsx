@@ -1,19 +1,9 @@
-import { useState } from "react";
-import { IoCopyOutline } from "react-icons/io5";
-
-// Also install this npm i --save-dev @types/react-lottie
-// import Player from "lottie-react";
-import dynamic from "next/dynamic";
-
 import { cn } from "@/lib/utils";
 
 
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
-import animationData from "@/data/confetti.json";
-import MagicButton from "../MagicButton";
-
-// Remove any reference to 'dynamic' and commented dynamic import code
+import EmailCopyButton from "../EmailCopyButton";
 
 export const BentoGrid = ({
   className,
@@ -58,28 +48,6 @@ export const BentoGridItem = ({
   const leftLists = ["ReactJS", "Angular", "VueJS"];
   const rightLists = ["NodeJS", "Python", "Java"];
 
-  const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const handleCopy = () => {
-    const text = "hariskhan936.hk@gmail.com";
-    // Check if we're in a browser environment
-    if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(text);
-      setCopied(true);
-    }
-  };
-
-  const LottieConfetti = dynamic(() => import("../LottieConfetti"), { ssr: false });
-
   return (
     <div
       className={cn(
@@ -101,8 +69,10 @@ export const BentoGridItem = ({
           {img && (
             <img
               src={img}
-              alt={img}
+              alt={typeof title === "string" ? title : "bento image"}
               className={cn(imgClassName, "object-cover object-center ")}
+              loading={id === 1 ? "eager" : "lazy"}
+              decoding="async"
             />
           )}
         </div>
@@ -113,9 +83,11 @@ export const BentoGridItem = ({
           {spareImg && (
             <img
               src={spareImg}
-              alt={spareImg}
+              alt={typeof title === "string" ? title : "bento spare image"}
               //   width={220}
               className="object-cover object-center w-full h-full"
+              loading="lazy"
+              decoding="async"
             />
           )}
         </div>
@@ -177,29 +149,7 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
-          {id === 6 && (
-            <div className="mt-5 relative">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-              {/* add handleCopy() for the copy the text */}
-              <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
-              >
-                {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <LottieConfetti autoplay={copied} loop={copied} />
-              </div>
-
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
-            </div>
-          )}
+          {id === 6 && <EmailCopyButton />}
         </div>
       </div>
     </div>
