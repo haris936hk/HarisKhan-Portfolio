@@ -60,7 +60,18 @@ export const BackgroundGradientAnimation = ({
       document.body.style.setProperty("--size", size);
       document.body.style.setProperty("--blending-value", blendingValue);
     }
-  }, []);
+  }, [
+    gradientBackgroundStart,
+    gradientBackgroundEnd,
+    firstColor,
+    secondColor,
+    thirdColor,
+    fourthColor,
+    fifthColor,
+    pointerColor,
+    size,
+    blendingValue,
+  ]);
 
   useEffect(() => {
     if (!interactive) return;

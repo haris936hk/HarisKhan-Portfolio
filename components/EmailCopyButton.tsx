@@ -22,7 +22,7 @@ export default function EmailCopyButton() {
 
   return (
     <div className="mt-5 relative">
-      <div className="absolute -bottom-5 right-0 block">
+      <div className="absolute -bottom-5 right-0">
         {copied && <LottieConfetti autoplay={copied} loop={copied} />}
       </div>
       <MagicButton

@@ -192,27 +192,29 @@ const ShaderMaterial = ({
   uniforms: Uniforms;
 }) => {
   const { size } = useThree();
-  const ref = useRef<THREE.Mesh>();
-  let lastFrameTime = 0;
+  const ref = useRef<THREE.Mesh>(null);
+  const lastFrameTimeRef = useRef(0);
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
-    const timestamp = clock.getElapsedTime();
-    if (timestamp - lastFrameTime < 1 / maxFps) {
+    const timestamp = clock.elapsedTime;
+    if (timestamp - lastFrameTimeRef.current < 1 / maxFps) {
       return;
     }
-    lastFrameTime = timestamp;
+    lastFrameTimeRef.current = timestamp;
 
-    const material: any = ref.current.material;
-    const timeLocation = material.uniforms.u_time;
-    timeLocation.value = timestamp;
+    const meshMaterial = ref.current.material;
+    if (meshMaterial instanceof THREE.ShaderMaterial && meshMaterial.uniforms.u_time) {
+      meshMaterial.uniforms.u_time.value = timestamp;
+    }
   });
 
-  const getUniforms = () => {
-    const preparedUniforms: any = {};
+  // Shader material
+  const material = useMemo(() => {
+    const preparedUniforms: Record<string, { value: unknown; type?: string }> = {};
 
     for (const uniformName in uniforms) {
-      const uniform: any = uniforms[uniformName];
+      const uniform = uniforms[uniformName];
 
       switch (uniform.type) {
         case "uniform1f":
@@ -220,7 +222,7 @@ const ShaderMaterial = ({
           break;
         case "uniform3f":
           preparedUniforms[uniformName] = {
-            value: new THREE.Vector3().fromArray(uniform.value),
+            value: new THREE.Vector3().fromArray(uniform.value as number[]),
             type: "3f",
           };
           break;
@@ -229,7 +231,7 @@ const ShaderMaterial = ({
           break;
         case "uniform3fv":
           preparedUniforms[uniformName] = {
-            value: uniform.value.map((v: number[]) =>
+            value: (uniform.value as number[][]).map((v: number[]) =>
               new THREE.Vector3().fromArray(v)
             ),
             type: "3fv",
@@ -237,7 +239,7 @@ const ShaderMaterial = ({
           break;
         case "uniform2f":
           preparedUniforms[uniformName] = {
-            value: new THREE.Vector2().fromArray(uniform.value),
+            value: new THREE.Vector2().fromArray(uniform.value as number[]),
             type: "2f",
           };
           break;
@@ -250,12 +252,8 @@ const ShaderMaterial = ({
     preparedUniforms["u_time"] = { value: 0, type: "1f" };
     preparedUniforms["u_resolution"] = {
       value: new THREE.Vector2(size.width * 2, size.height * 2),
-    }; // Initialize u_resolution
-    return preparedUniforms;
-  };
+    };
 
-  // Shader material
-  const material = useMemo(() => {
     const materialObject = new THREE.ShaderMaterial({
       vertexShader: `
       precision mediump float;
@@ -271,7 +269,7 @@ const ShaderMaterial = ({
       }
       `,
       fragmentShader: source,
-      uniforms: getUniforms(),
+      uniforms: preparedUniforms,
       glslVersion: THREE.GLSL3,
       blending: THREE.CustomBlending,
       blendSrc: THREE.SrcAlphaFactor,
@@ -279,10 +277,10 @@ const ShaderMaterial = ({
     });
 
     return materialObject;
-  }, [size.width, size.height, source]);
+  }, [size.width, size.height, source, uniforms]);
 
   return (
-    <mesh ref={ref as any}>
+    <mesh ref={ref}>
       <planeGeometry args={[2, 2]} />
       <primitive object={material} attach="material" />
     </mesh>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaLocationArrow } from "react-icons/fa6";
 
 import { socialMedia } from "@/data";
@@ -37,15 +38,13 @@ const Footer = () => {
               href={info.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
+              className="size-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
             >
-              <img
+              <Image
                 src={info.img}
                 alt="social media icon"
                 width={20}
                 height={20}
-                loading="lazy"
-                decoding="async"
               />
             </a>
           ))}

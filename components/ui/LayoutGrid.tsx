@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "./MovingBorders";
@@ -29,9 +29,9 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   return (
     // change md:grid-cols-3 to md:grid-cols-4, gap-4 to gap-10
     <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-4 max-w-7xl mx-auto gap-10 ">
-      {cards.map((card, i) => (
+      {cards.map((card) => (
         <Button
-          key={i}
+          key={card.id}
           borderRadius="1.75rem"
           //   default is 2000
           duration={10000}
@@ -47,8 +47,17 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               "relative border-3 border-yellow-500"
             )}
           >
-            <motion.div
+            <m.div
               onClick={() => handleClick(card)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  handleClick(card);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-expanded={selected?.id === card.id}
               className={cn(
                 card.className,
                 "relative overflow-hidden",
@@ -62,12 +71,21 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             >
               {selected?.id === card.id && <SelectedCard selected={selected} />}
               <BlurImage card={card} />
-            </motion.div>
+            </m.div>
           </div>
         </Button>
       ))}
-      <motion.div
+      <m.div
         onClick={handleOutsideClick}
+        onKeyDown={(e) => {
+          if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleOutsideClick();
+          }
+        }}
+        role="button"
+        tabIndex={selected?.id ? 0 : -1}
+        aria-label="Close modal overlay"
         className={cn(
           "absolute h-full w-full left-0 top-0 bg-black opacity-0 z-10",
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
@@ -99,7 +117,7 @@ const BlurImage = ({ card }: { card: Card }) => {
 const SelectedCard = ({ selected }: { selected: Card | null }) => {
   return (
     <div className="bg-transparent h-full w-full flex flex-col justify-end rounded-lg shadow-2xl relative z-[60]">
-      <motion.div
+      <m.div
         initial={{
           opacity: 0,
         }}
@@ -108,14 +126,14 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
         }}
         className="absolute inset-0 h-full w-full bg-black opacity-60 z-10"
       />
-      <motion.div
+      <m.div
         initial={{
           opacity: 0,
-          y: 100,
+          transform: "translateY(100px)",
         }}
         animate={{
           opacity: 1,
-          y: 0,
+          transform: "translateY(0px)",
         }}
         transition={{
           duration: 0.3,
@@ -124,7 +142,7 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
         className="relative px-8 pb-4 z-[70]"
       >
         {selected?.content}
-      </motion.div>
+      </m.div>
     </div>
   );
 };

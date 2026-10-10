@@ -4,14 +4,14 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center">
+    <div className="relative h-dvh min-h-dvh flex items-center justify-center">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
        */}
       <div>
         <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-dvh"
           fill="white"
         />
         <Spotlight
@@ -27,7 +27,7 @@ const Hero = () => {
        *  0.2 to 0.03
        */}
       <div
-        className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
+        className="h-dvh w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
        absolute top-0 left-0 flex items-center justify-center"
       >
         {/* Radial gradient for the container to give a faded look */}
@@ -38,8 +38,8 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center space-y-8 pt-20">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center space-y-6">
+      <div className="relative z-10 flex flex-col items-center justify-center gap-8 pt-20">
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center gap-6">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Dynamic Web Magic with Full Stack Expertise
           </p>
@@ -51,7 +51,7 @@ const Hero = () => {
            */}
           <TextGenerateEffect
             words="Transforming Concepts into Seamless User Experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            className="text-center text-[2.5rem] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider text-sm md:text-lg lg:text-2xl">

@@ -1,0 +1,88 @@
+# `react-doctor/no-static-element-interactions`
+
+Require static elements with click or key handlers to declare an interactive role, or be replaced with a semantic element.
+
+- **Status:** Active
+- **Category:** Accessibility
+- **Assessment:** Evidence-required risk
+- **Required evidence:** source code, rendered UI, accessibility audit
+- **Default configuration:** Enabled
+- **Default severity:** warn
+- **Scope:** All supported frameworks
+- **Active when:** always (unless customRulesOnly=true)
+- **Requirements:** react
+- **Tags:** react-jsx-only
+- **Priority:** 48 (P3)
+- **Source:** oxlint-plugin-react-doctor
+- **Rule set:** oxlint-plugin-react-doctor 0.9.3 (prompt schema 2)
+- **Documentation:** [Official documentation](https://oxc.rs/docs/guide/usage/linter/rules/jsx_a11y/no-static-element-interactions)
+
+## Validation prompt
+
+Confirm the detector match and collect the required evidence before deciding whether an edit is warranted.
+
+Fires when a static element (div, span, etc.) has a configured interactive handler (default: onClick, onMouseDown, onMouseUp, onKeyPress, onKeyDown, onKeyUp) but no role mapping it to an interactive role like button, link, or menuitem.
+
+Suppress when: a wrapper that catches bubbled events from interactive descendants and isn't itself an interaction target: disable with an explanatory comment.
+
+## Evidence boundary
+
+The diagnostic proves only that the detector's modeled source pattern matched. It does not prove runtime impact, product intent, rendered failure, or that one remediation is correct.
+
+Establish the environment, explicit repository policy, relevant exceptions, and required rendered or runtime evidence before deciding the occurrence. This page’s Assessment and Required evidence fields define the review contract.
+
+Default severity is registry metadata. Use the occurrence's JSON severity after repository configuration when ordering real findings.
+
+Record one outcome:
+
+- **Confirmed failure:** The required evidence establishes the violation.
+- **Rejected:** A documented exception or false-positive predicate applies.
+- **Needs evidence:** Named evidence can still be collected.
+- **Unavailable:** Required evidence cannot be collected in this run.
+- **Waived with evidence:** An authorized, scoped exception applies to an established failure.
+- **Observation:** The review records an optional tradeoff without claiming a defect.
+
+A waiver records its scope, authority, evidence, and review or expiry condition. It is not a pass or false positive.
+
+## Fix prompt
+
+Apply this candidate correction only after the required evidence confirms the risk.
+
+If the element is an interaction target, use a native semantic element (<button>, <a href>, <input>): they ship with role, focus, and keyboard support. If you must keep the div, add an appropriate role (role='button', 'link', 'menuitem', 'switch', etc.) plus tabIndex={0} and keyboard handlers so users can reach and activate it. Do not use role='presentation'. See https://oxc.rs/docs/guide/usage/linter/rules/jsx_a11y/no-static-element-interactions
+
+## Repository-wide copy prompt
+
+Use this only for a repository-wide pass after validating each occurrence. For one occurrence, use the occurrence-level guidance above.
+
+````text
+Fix every confirmed `react-doctor/no-static-element-interactions` diagnostic in the current repository.
+
+Required change:
+- If the element is an interaction target, use a native semantic element (<button>, <a href>, <input>): they ship with role, focus, and keyboard support. If you must keep the div, add an appropriate role (role='button', 'link', 'menuitem', 'switch', etc.) plus tabIndex={0} and keyboard handlers so users can reach and activate it. Do not use role='presentation'. See https://oxc.rs/docs/guide/usage/linter/rules/jsx_a11y/no-static-element-interactions.
+
+Validation before editing:
+Fires when a static element (div, span, etc.) has a configured interactive handler (default: onClick, onMouseDown, onMouseUp, onKeyPress, onKeyDown, onKeyUp) but no role mapping it to an interactive role like button, link, or menuitem.
+
+Suppress when: a wrapper that catches bubbled events from interactive descendants and isn't itself an interaction target: disable with an explanatory comment.
+
+Constraints:
+- Make the smallest change that fixes the root cause.
+- Preserve behavior and interfaces unrelated to this diagnostic.
+- Reuse existing project components, utilities, and conventions.
+- Do not introduce render-phase side effects, render-phase state updates, or Hooks rule violations.
+- Preserve accessible names, focus order, keyboard behavior, and touch access not targeted by this rule.
+- Adapt identifiers and framework details instead of copying blindly.
+- Do not disable the rule or suppress matching code.
+- Confirm this rule is enabled for the project: `always (unless customRulesOnly=true)`.
+
+Assessment:
+- Record detector evidence, applicability facts, assumptions, missing evidence, and the rule class for this occurrence.
+- Return one outcome: Confirmed failure, Rejected, Needs evidence, Unavailable, Waived with evidence, or Observation.
+- A waiver records the established failure, scope, authority, evidence, and review or expiry condition. It is not a pass or false positive.
+
+Verification:
+- Run focused tests for the changed behavior.
+- Run React Doctor and confirm this diagnostic no longer appears from changed code.
+- Run an unfiltered scan of the affected scope before claiming no cross-category regression.
+- Report the files changed and any checks you could not run.
+````
