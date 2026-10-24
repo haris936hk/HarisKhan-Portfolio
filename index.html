@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haris Khan | DevHQ</title>
+    <meta name="description"
+        content="Personal Portfolio of Haris Khan, a Full-Stack Software Engineer. Explore my projects, experience, and skills.">
+    <link rel="canonical" href="https://hariskhan-portfolio.netlify.app/" />
+
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Haris Khan | DevHQ">
+    <meta property="og:description" content="Explore my projects, work experience, and technical skills.">
+    <meta property="og:image"
+        content="https://hariskhan-portfolio.netlify.app/Docs/Professional%20Portrait%20in%20Navy%20Blazer.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Haris Khan | DevHQ">
+    <meta name="twitter:description" content="Explore my projects, work experience, and technical skills.">
+    <meta name="twitter:image" content="https://hariskhan-portfolio.netlify.app/Docs/Professional%20Portrait%20in%20Navy%20Blazer.png">
+
+    <link rel="icon" href="portfolio_assets/DevHQ_Favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+    <script type="module" src="./speed-insights.js"></script>
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+    <!-- ── Floating Navbar ── -->
+    <nav class="site-nav" id="siteNav">
+        <div class="nav-pill">
+            <span class="nav-indicator" id="navIndicator"></span>
+            <a href="#home" class="nav-link active" data-section="home">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#about" class="nav-link" data-section="about">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span class="nav-label">About</span>
+            </a>
+            <a href="#experience" class="nav-link" data-section="experience">
+                <i class="fa-solid fa-briefcase nav-icon"></i>
+                <span class="nav-label">Experience</span>
+            </a>
+            <a href="#projects" class="nav-link" data-section="projects">
+                <i class="fa-solid fa-code nav-icon"></i>
+                <span class="nav-label">Projects</span>
+            </a>
+            <a href="#skills" class="nav-link" data-section="skills">
+                <i class="fa-solid fa-layer-group nav-icon"></i>
+                <span class="nav-label">Skills</span>
+            </a>
+            <a href="#certifications" class="nav-link" data-section="certifications">
+                <i class="fa-solid fa-award nav-icon"></i>
+                <span class="nav-label">Certs</span>
+            </a>
+            <a href="#profiles" class="nav-link" data-section="profiles">
+                <i class="fa-solid fa-globe nav-icon"></i>
+                <span class="nav-label">Profiles</span>
+            </a>
+            <a href="#contact" class="nav-link" data-section="contact">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span class="nav-label">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ── Preloader: Boot Sequence ── -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-particles" id="preloaderParticles"></div>
+
+        <!-- Branding -->
+        <div class="preloader-brand">
+            <div class="preloader-brand-main">
+                <span class="preloader-brand-name">Haris</span><span class="preloader-brand-accent">Khan</span>
+            </div>
+            <div class="preloader-brand-subtitle">
+                <span class="subtitle-line"></span>
+                <span>Personal Portfolio</span>
+                <span class="subtitle-line"></span>
+            </div>
+        </div>
+
+        <!-- Sleek Loading Bar -->
+        <div class="preloader-sleek-track">
+            <div class="preloader-sleek-fill" id="preloaderSleekFill"></div>
+        </div>
+
+        <!-- Cycling Tagline -->
+        <div class="preloader-tagline">
+            <span class="tagline-word" style="--w:0">Ideate.</span>
+            <span class="tagline-word" style="--w:1">Design.</span>
+            <span class="tagline-word" style="--w:2">Develop.</span>
+            <span class="tagline-word" style="--w:3">Innovate.</span>
+        </div>
+    </div>
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <div class="background-container">
+        <canvas id="bg-canvas"></canvas>
+
+    </div>
+
+    <main class="hero" id="home">
+
+        <div class="floating-icon icon-top-left">
+            <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="floating-icon icon-top-right">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="floating-icon icon-bottom-left">
+            <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="floating-icon icon-bottom-right">
+            <i class="fa-regular fa-lightbulb"></i>
+        </div>
+
+        <div class="content-wrapper">
+            <h2 class="sub-title">Woah! You Landed on the Portfolio Website of The</h2>
+            <br>
+            <br>
+            <h1 class="sr-only">Haris Khan - Full-Stack Software Engineer Portfolio</h1>
+            <h2 class="main-title">
+                <span class="purple-text" id="typing-text"></span>
+            </h2>
+            <br>
+            <br>
+            <h5 class="year">Haris Khan | Software Engineer</h5>
+            <br>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-resume">Let's Connect</a>
+                <a href="Docs/Haris%20Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume">View Resume</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="about-section" id="about">
+        <div class="glass-card scroll-reveal">
+            <h2>About Me - <span class="purple-text">Behind The Code!</span></h2>
+            <p>
+                I am a full-stack software engineer specializing in AI-powered web applications, e-commerce
+                platforms, and enterprise management systems. I work across React, Node.js, Python ML/AI,
+                and modern frameworks to deliver complete solutions from concept to deployment.
+
+                <br><br>I turn business challenges into scalable, user-friendly applications and thrive in
+                collaborative environments. My services span full-stack web development, e-commerce solutions,
+                AI/ML integration, desktop applications, mobile development, and technical consulting.
+                I studied for a Bachelor's in Software Engineering at Riphah International University
+                (August 2022 – May 2026), following Intermediate in Computer Science at I.M.C.B,
+                F-11/3, Islamabad (March 2019 – April 2021).
+            </p>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="projects-section" id="experience">
+        <h2 class="section-title">Work Experience - <span class="purple-text">Professional Journey!</span></h2>
+        <br>
+        <div class="timeline">
+            <div class="timeline-line">
+                <div class="timeline-progress"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-number">01</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Nexus Pakistan</div>
+                    <img src="portfolio_assets/Nexus.svg" alt="Nexus Pakistan initials" class="company-logo">
+                    <h3>Machine Learning Intern</h3>
+                    <p style="text-align: left; padding: 10px 0;">
+                        • Designed and developed a chatbot for both iOS and Android platforms using Chatbase.
+                    </p>
+                </div>
+                <div class="timeline-date">MAR 2025 – JUN 2025</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-number">02</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Eziline Software House</div>
+                    <img src="portfolio_assets/Eziline.svg" alt="Eziline Software House initials" class="company-logo">
+                    <h3>Front-End Intern</h3>
+                    <p style="text-align: left; padding: 10px 0;">
+                        • Developed and maintained user-facing features using modern frontend technologies.
+                    </p>
+                </div>
+                <div class="timeline-date">MAR 2024 – JUN 2024</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-number">03</div>
+                <div class="timeline-content">
+                    <div class="project-tag">Samhan Technologies</div>
+                    <img src="portfolio_assets/Samhan.svg" alt="Samhan Technologies initials" class="company-logo">
+                    <h3>Full-Stack Intern</h3>
+                    <p style="text-align: left; padding: 10px 0;">
+                        • Developed a collaborative system for employees and managers to enhance project management
+                        and performance evaluations.
+                    </p>
+                </div>
+                <div class="timeline-date">APR 2023 – JUL 2023</div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-number">04</div>
+                <div class="timeline-content">
+                    <div class="project-tag">PTCL</div>
+                    <img src="portfolio_assets/PTCL.svg" alt="PTCL initials" class="company-logo">
+                    <h3>Front-End Intern</h3>
+                    <p style="text-align: left; padding: 10px 0;">
+                        • Assisted in the development of a web-based platform using React.js, enhancing interactivity.
+                    </p>
+                </div>
+                <div class="timeline-date">MAR 2022 – JUL 2022</div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">Projects Showcase - <span class="purple-text">What I've Built!</span></h2>
+        <br>
+        <div class="experience-grid">
+
+            <div class="experience-card" data-drive-video-id="1sWmwFjOuH7_EHpwRps4xC7fTDJTkjUP4">
+                <div class="experience-date">Deployed</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Creator Intelligence</div>
+                <h3>KontrolAlt</h3>
+                <p>
+                    A creator-discovery and growth-intelligence platform for Rumble and Substack, connecting automated scraping, engagement trends, AI channel reports, lookalike matching, and shared partnership tracking. Stack: Next.js 16, TypeScript, Tailwind CSS, FastAPI, Supabase Auth, PostgreSQL, Celery, Redis, Playwright, Vercel, Render, Upstash.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=2" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1a1D8_bf3H_SuX5ZXapATKbFmRyBnWaUN">
+                <div class="experience-date">Deployed</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Meeting Intelligence</div>
+                <h3>EchoNote</h3>
+                <p>
+                    A meeting-intelligence application turning recordings and uploads into speaker-attributed transcripts, structured summaries, and linked tasks, with shared workspaces and collaborative editing. Stack: React 18, HeroUI, Tailwind CSS, RecordRTC, Node.js, Express, JWT, Google OAuth, Python, spaCy, Deepgram, Groq, PostgreSQL, Prisma, Liveblocks.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=3" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="19xBuq6qPtoFyMbgGXqHdnCgpX4sE_Dvs">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · AI Operations</div>
+                <h3>Upwork Cowork Agent</h3>
+                <p>
+                    An AI-assisted operations dashboard for explainable job discovery, portfolio-grounded proposals, version-bound critiques, and durable human review. Operators explicitly start writing and revisions; approval records a decision without submitting to Upwork. Stack: React 19, TypeScript, Vite, TanStack Query, Tailwind CSS 4, FastAPI, PostgreSQL, SQLAlchemy, APScheduler, MCP SDK, OAuth/PKCE, Docker.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=4" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1on35a1TigGP_yYciao1v85sKeTBfuRg9">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Desktop POS</div>
+                <h3>SAFISH PLUS POS</h3>
+                <p>
+                    A bilingual English-Urdu fish-retail desktop system connecting kilogram-based checkout, transactional FIFO stock costing, supplier restocks, numbered invoices, and six report views. Cash/online labels classify payments rather than process them. Stack: Electron 40, React 19, Vite 7, Mantine 8, Recharts, Fuse.js, SQLite, better-sqlite3, i18next, PDF receipts, CSV exports.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=5" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1mHPgi4KolPc_wnUB-B8gvwEFc7HTCWvy">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Distributor ERP</div>
+                <h3>SAFISH PLUS DISTRIBUTOR ERP</h3>
+                <p>
+                    A bilingual fish-wholesale desktop workspace for purchases, owned-stock sales, vendor consignments, commission settlements, customer/vendor balances, and thirteen report views. Separate stock and consignment workflows preserve ownership and settlement records. Stack: Electron 40, React 19, Vite 7, Zustand, Mantine 8, Tailwind CSS 4, SQLite, better-sqlite3, i18next, ExcelJS, PDF output.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=6" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="18Yk5wWUmWmobQoN3gtq7Uud4TyXc0EtG">
+                <div class="experience-date">Deployed</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Scholarly Publishing</div>
+                <h3>3LT Journal Theme</h3>
+                <p>
+                    A custom editorial identity and responsive Janeway journal theme for issue discovery, scholarly articles, editorial profiles, guidelines, and search. Shared templates preserve publishing workflows, form validation, and CSRF protection, with mobile navigation, print styles, and reduced-motion support. Stack: Django templates, Janeway, OLH base theme, CSS, Source Serif 4, Inter, vanilla JavaScript, Python utilities.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=7" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1Uh-rEi7R94Z6c7TADV06LVZ2_gHPdkPf">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Product Storytelling</div>
+                <h3>Pulse Robot</h3>
+                <p>
+                    A responsive product-story website presenting the Atlas humanoid companion concept through Lottie visuals, scroll-driven stacked cards, and viewport reveals. Inquiry and newsletter interfaces demonstrate local feedback only; they do not send or persist submissions or verify robot functionality. Stack: React 18, TypeScript, Vite 5, React Router 6, Tailwind CSS 3, lottie-react, Sonner, Lucide, Radix UI.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=8" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1HFu7LmbYLcWPlmonTkQ5PDNtRI6uK6AU">
+                <div class="experience-date">Deployed</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Fashion Commerce</div>
+                <h3>Singhar By Sidra</h3>
+                <p>
+                    An editorial-first fashion storefront connecting campaign content, collection filters, predictive search, variant-aware products, optimistic carts, and Shopify checkout. Customer accounts support orders, addresses, and wishlists; BILDIT manages homepage slots and Judge.me powers reviews. Stack: Shopify Hydrogen, React 18, React Router 7, TypeScript, Storefront API, Customer Account API, Tailwind CSS 4, Shopify Oxygen.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=9" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1LjxU8bc6kBdBbdpZa_TU9oKZCMnQJBMm">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Corporate Portfolio</div>
+                <h3>Goodman Group</h3>
+                <p>
+                    A server-first corporate portfolio joining one group identity to five bespoke company profiles, a registry-driven directory, and validated enquiries. Includes persistent themes, reduced-motion support, route metadata, structured data, and rate-limited Resend delivery with visible errors. Stack: Next.js 16, React 19, TypeScript, Tailwind CSS 4, Lenis, GSAP, ScrollTrigger, Upstash Redis, Resend.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=10" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1SG5_dn1q6Dn4JMUuPBt84dUcvcNSbUdW">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · Inventory &amp; Finance</div>
+                <h3>Inventory &amp; Finance Management System</h3>
+                <p>
+                    A desktop operations platform connecting serialized equipment inventory, stock reservations, invoices, customer receivables, procurement, vendor payables, and reporting. Transactions, row locks, four-decimal monetary values, reversible records, and audit history protect financial integrity. Stack: Electron 27, React 18, Ant Design, Zustand, React Query, Express, PostgreSQL, Prisma, ExcelJS/xlsx, PDFKit.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=11" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1PgR4d-74ChpHWgnvOK20gGKkdK9MGLmf">
+                <div class="experience-date">Deployed</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Freelance · WebGL Navigation</div>
+                <h3>Trulle Portal</h3>
+                <p>
+                    A cinematic artwork-led navigation system with up to five interactive peephole portals per widget, hover previews, expanding destination transitions, and browser-history restoration. An Elementor repeater configures isolated widget instances; one GSAP ticker drives WebGL rendering and cached timelines. Stack: PixiJS 8, WebGL, SVG, GSAP, React 19, Zustand 5, Vite 6, PHP, WordPress, Elementor.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=12" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1xrV_BpqrhVKgvzA1_rxwkvsLYE93TfBN">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Hobby · Product Research</div>
+                <h3>Trend Finder</h3>
+                <p>
+                    A local-first research workspace ranking home-office product ideas from Google Trends and Reddit signals, with editable keywords, communities, live scan progress, and saved history. Scores combine 60% Trends and 40% Reddit after normalization within each scan batch. Stack: React, TypeScript, Vite, Tailwind CSS, FastAPI, Server-Sent Events, pytrends, PRAW, SQLAlchemy, SQLite.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=13" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+            <div class="experience-card" data-drive-video-id="1rXXbhGn2CE6LpD6pP9UjTanYOSHVuMqC">
+                <div class="experience-date">Implemented</div>
+                <div class="project-tag" style="display: inline-block; width: max-content;">Hobby · Queueing Simulation</div>
+                <h3>Software Server Queue Simulation Dashboard</h3>
+                <p>
+                    A local interactive simulator exploring request arrivals, service times, worker capacity, queue growth, response times, and SLA breaches. Seeded workloads support fair capacity comparisons; a visible utilization-based recommendation does not guarantee the SLA. This is a simulation, not live infrastructure monitoring. Stack: Python, Streamlit, NumPy, SimPy, pandas, Plotly, pytest.
+                </p>
+                <div class="project-links-wrapper">
+                    <a href="Docs/Haris_Khan_Projects%20%281%29.pdf#page=14" target="_blank" rel="noopener" class="project-btn primary-btn"><i
+                            class="fa-regular fa-eye"></i> Case Study</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <dialog id="projectVideoModal" class="project-video-modal" aria-labelledby="projectVideoTitle">
+        <div class="project-video-header">
+            <h2 id="projectVideoTitle">Project demo</h2>
+            <button type="button" class="project-video-close" aria-label="Close project video" autofocus>&times;</button>
+        </div>
+        <div id="projectVideoPlayer" class="project-video-player"></div>
+        <p class="project-video-help">If playback does not start automatically, press Play in the video player.</p>
+    </dialog>
+
+    <br>
+
+    <section class="skills-section" id="skills">
+        <h2 class="section-title">Technical Skills - <span class="purple-text">Core Expertise!</span></h2>
+
+        <div class="skill-filters" id="skillFilters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="languages">Languages</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="backend">Backend</button>
+            <button class="filter-btn" data-filter="databases">Databases</button>
+            <button class="filter-btn" data-filter="tools">Tools</button>
+        </div>
+
+        <div class="skill-grid" id="skillGrid">
+
+            <div class="skill-card" data-category="languages">
+                <i class="devicon-cplusplus-plain colored"></i>
+                <span>C++</span>
+            </div>
+            <div class="skill-card" data-category="languages">
+                <i class="fa-brands fa-python" style="color: #3776AB;"></i>
+                <span>Python</span>
+            </div>
+            <div class="skill-card" data-category="languages">
+                <i class="devicon-java-plain colored"></i>
+                <span>Java</span>
+            </div>
+            <div class="skill-card" data-category="languages">
+                <i class="devicon-javascript-plain colored"></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="skill-card" data-category="languages">
+                <i class="devicon-typescript-plain colored"></i>
+                <span>TypeScript</span>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <i class="devicon-html5-plain colored"></i>
+                <span>HTML</span>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <i class="devicon-css3-plain colored"></i>
+                <span>CSS</span>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <i class="devicon-react-original colored"></i>
+                <span>React.js</span>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <i class="devicon-nextjs-plain"></i>
+                <span>Next.js</span>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <i class="devicon-nodejs-plain-wordmark colored"></i>
+                <span>Node.js</span>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <i class="devicon-express-original"></i>
+                <span>Express.js</span>
+            </div>
+            <div class="skill-card" data-category="backend">
+                <i class="devicon-fastapi-plain colored"></i>
+                <span>FastAPI</span>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <i class="devicon-tailwindcss-original colored"></i>
+                <span>Tailwind CSS</span>
+            </div>
+            <div class="skill-card" data-category="frontend">
+                <i class="devicon-angularjs-plain colored"></i>
+                <span>AngularJS</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-mongodb-plain colored"></i>
+                <span>MongoDB</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-mysql-plain colored"></i>
+                <span>MySQL</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-postgresql-plain colored"></i>
+                <span>PostgreSQL</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-supabase-plain colored"></i>
+                <span>Supabase</span>
+            </div>
+            <div class="skill-card" data-category="databases">
+                <i class="devicon-sqlite-plain colored"></i>
+                <span>SQLite</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-git-plain colored"></i>
+                <span>Git</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-github-original"></i>
+                <span>GitHub</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-prisma-original colored"></i>
+                <span>Prisma</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-vercel-original"></i>
+                <span>Vercel</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-docker-plain"></i>
+                <span>Docker</span>
+            </div>
+            <div class="skill-card" data-category="tools">
+                <i class="devicon-githubactions-plain colored"></i>
+                <span>GitHub Actions</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="certifications-section" id="certifications">
+        <h2 class="section-title">Certifications - <span class="purple-text">Learning Milestones!</span></h2>
+
+        <div class="cert-grid">
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/JavaScriptEssentials2Update20250726-32-fmcado.png" alt="Cisco Networking Academy: JavaScript Essentials 2">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/JavaScriptEssentials2Update20250726-32-fmcado.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Cisco Networking Academy: JavaScript Essentials 2</h3>
+                    <p>Completed Cisco Networking Academy's JavaScript Essentials 2 course.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/JavaScriptEssentials1Update20250726-30-sxqykr.png" alt="Cisco Networking Academy: JavaScript Essentials 1">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/JavaScriptEssentials1Update20250726-30-sxqykr.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Cisco Networking Academy: JavaScript Essentials 1</h3>
+                    <p>Completed Cisco Networking Academy's JavaScript Essentials 1 course.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera PVRX55SY76RG.png" alt="Developing Front-End Apps with React">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20PVRX55SY76RG.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Developing Front-End Apps with React</h3>
+                    <p>Completed this IBM-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera QPJPJZL6UUKE.png" alt="Developing Back-End Apps with Node.js and Express">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20QPJPJZL6UUKE.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Developing Back-End Apps with Node.js and Express</h3>
+                    <p>Completed this IBM-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera 4AA7SB5K7WRN.png" alt="Introduction to Web Development with HTML, CSS, JavaScript">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%204AA7SB5K7WRN.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Introduction to Web Development with HTML, CSS, JavaScript</h3>
+                    <p>Completed this IBM-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera YS7C9Z2EHLZG.png" alt="Getting Started with Git and GitHub">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20YS7C9Z2EHLZG.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Getting Started with Git and GitHub</h3>
+                    <p>Completed this IBM-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/PythonEssentials2Update20250726-31-4e7x63.png" alt="Cisco Networking Academy: Python Essentials 2">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/PythonEssentials2Update20250726-31-4e7x63.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Cisco Networking Academy: Python Essentials 2</h3>
+                    <p>Completed Cisco Networking Academy's Python Essentials 2 course.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/PythonEssentials1Update20250726-30-b50xj4.png" alt="Cisco Networking Academy: Python Essentials 1">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/PythonEssentials1Update20250726-30-b50xj4.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Cisco Networking Academy: Python Essentials 1</h3>
+                    <p>Completed Cisco Networking Academy's Python Essentials 1 course.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/NetworkingBasicsUpdate20250726-30-30bmv5.png" alt="Cisco Networking Academy: Networking Basics">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/NetworkingBasicsUpdate20250726-30-30bmv5.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Cisco Networking Academy: Networking Basics</h3>
+                    <p>Completed Cisco Networking Academy's Networking Basics course.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/I2CSUpdate20250726-30-rphddi.png" alt="Cisco Networking Academy: Introduction to Cybersecurity">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/I2CSUpdate20250726-30-rphddi.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Cisco Networking Academy: Introduction to Cybersecurity</h3>
+                    <p>Completed Cisco Networking Academy's Introduction to Cybersecurity course.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera VPX697SKWUKD.png" alt="Introduction to Relational Database and SQL">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20VPX697SKWUKD.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Introduction to Relational Database and SQL</h3>
+                    <p>Completed this Coursera project on relational databases and SQL.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera VPJTJ83U63VY.png" alt="Create a Python Application using PyMongo and MongoDB Database">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20VPJTJ83U63VY.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Create a Python Application using PyMongo and MongoDB Database</h3>
+                    <p>Completed this Coursera project using PyMongo with a MongoDB database.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera SSHMHDYEJ4XF.png" alt="Linux: Introduction to Shell Scripting for DevOps">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20SSHMHDYEJ4XF.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Linux: Introduction to Shell Scripting for DevOps</h3>
+                    <p>Completed this Coursera project introducing shell scripting for DevOps.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera PVVKYAFAVXA6.png" alt="Create Your First NoSQL Database with MongoDB and Compass">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20PVVKYAFAVXA6.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Create Your First NoSQL Database with MongoDB and Compass</h3>
+                    <p>Completed this Coursera project creating a NoSQL database with MongoDB and Compass.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera KBVUZ26HWKV7.png" alt="Introduction to Cloud Computing">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20KBVUZ26HWKV7.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Introduction to Cloud Computing</h3>
+                    <p>Completed this IBM-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera PTRFB9RNS6G8.png" alt="The Bash Shell and Basic Scripting in Linux">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20PTRFB9RNS6G8.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>The Bash Shell and Basic Scripting in Linux</h3>
+                    <p>Completed this Coursera project on the Bash shell and Linux scripting.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera JENXTJQ9W8SU.png" alt="Process Map Data using C++ Adjacency List Shortest Path">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20JENXTJQ9W8SU.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Process Map Data using C++ Adjacency List Shortest Path</h3>
+                    <p>Completed this Coursera project processing map data with a C++ adjacency-list shortest-path approach.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera G5GCNWYP9FCB.png" alt="Performing Data Definition and Manipulation in SQL">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20G5GCNWYP9FCB.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Performing Data Definition and Manipulation in SQL</h3>
+                    <p>Completed this Coursera project on SQL data definition and manipulation.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera G2H6DMBMMNJP.png" alt="Getting Started with Ubuntu Linux">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20G2H6DMBMMNJP.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Getting Started with Ubuntu Linux</h3>
+                    <p>Completed this Coursera project introducing Ubuntu Linux.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera 9ZYQXK3S68KL.png" alt="Command Line Basics in Linux">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%209ZYQXK3S68KL.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Command Line Basics in Linux</h3>
+                    <p>Completed this Coursera project introducing the Linux command line.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera 6ZUW5AB9L9RH.png" alt="CRUD Operations using MongoDB NoSQL">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%206ZUW5AB9L9RH.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>CRUD Operations using MongoDB NoSQL</h3>
+                    <p>Completed this Coursera project on CRUD operations with MongoDB NoSQL.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera EUWJR99A12QP.png" alt="Game Design and Development 1: 2D Shooter">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20EUWJR99A12QP.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Game Design and Development 1: 2D Shooter</h3>
+                    <p>Completed this Michigan State University online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera YC23A7KLLRQC.png" alt="Getting Started with Microsoft Word">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20YC23A7KLLRQC.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Getting Started with Microsoft Word</h3>
+                    <p>Completed this Coursera project introducing Microsoft Word.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera V7AU99QHKGQ7.png" alt="Create Animated GIF for Social Media using Adobe Photoshop">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20V7AU99QHKGQ7.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Create Animated GIF for Social Media using Adobe Photoshop</h3>
+                    <p>Completed this Coursera project creating an animated social media GIF in Adobe Photoshop.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera RYVDYP98MK3J.png" alt="How Layers Work in Adobe Photoshop">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20RYVDYP98MK3J.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>How Layers Work in Adobe Photoshop</h3>
+                    <p>Completed this Coursera project about layers in Adobe Photoshop.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera RGSXRU5XGXCV.png" alt="How to create a high-quality flyer in Adobe Photoshop">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20RGSXRU5XGXCV.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>How to create a high-quality flyer in Adobe Photoshop</h3>
+                    <p>Completed this Coursera project creating a flyer with Adobe Photoshop.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera EG244U99ZN3G.png" alt="Fundamentals of Social Media Advertising">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20EG244U99ZN3G.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Fundamentals of Social Media Advertising</h3>
+                    <p>Completed this Meta-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera CR7W7YL8CENU.png" alt="Advertising with Meta">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20CR7W7YL8CENU.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Advertising with Meta</h3>
+                    <p>Completed this Meta-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera A3PL9BGD6GJM.png" alt="Social Media Management">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%20A3PL9BGD6GJM.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Social Media Management</h3>
+                    <p>Completed this Meta-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-img-wrapper">
+                    <img src="portfolio_assets/haris_certificates/Coursera 5YHZKRRGHY3R.png" alt="Introduction to Social Media Marketing">
+                    <div class="cert-overlay">
+                        <a href="Docs/Certificates/Coursera%205YHZKRRGHY3R.pdf" target="_blank" class="cert-overlay-link">
+                            <span>View Credentials</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h3>Introduction to Social Media Marketing</h3>
+                    <p>Completed this Meta-authorized online course through Coursera.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <br>
+
+    <section class="profiles-section" id="profiles">
+        <h2 class="section-title">Web Presence - <span class="purple-text">Dev Network!</span></h2>
+        <div class="profile-header">
+            <div class="profile-img-main">
+                <img src="Docs/Professional%20Portrait%20in%20Navy%20Blazer.png" alt="Haris Khan">
+            </div>
+            <div class="profile-text">
+                <p class="purple-text">@haris936hk</p>
+            </div>
+        </div>
+
+        <div class="profiles-grid">
+
+            <a href="https://www.linkedin.com/in/haris936hk/" target="_blank" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-brands fa-linkedin" style="color: #0077b5;"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>LinkedIn</h3>
+                    <p>Connect</p>
+                </div>
+            </a>
+
+            <a href="http://github.com/haris936hk" target="_blank" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-brands fa-github" style="color: #fff;"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>GitHub</h3>
+                    <p>Commit</p>
+                </div>
+            </a>
+
+            <a href="https://hariskhan-portfolio.netlify.app/" target="_blank" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>Portfolio</h3>
+                    <p>Explore</p>
+                </div>
+            </a>
+
+            <a href="mailto:hariskhan936.hk@gmail.com" target="_blank" class="profile-card">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-envelope" style="color: #2ec866;"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>Email</h3>
+                    <p>Connect</p>
+                </div>
+            </a>
+        </div>
+        <br>
+        <p class="profile-note">You can explore further by clicking on any of the profile cards above!</p>
+    </section>
+
+    <br>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch - <span class="purple-text">Ask Me Anything!</span></h2>
+            <h4 class="contact-note">Based in Islamabad, Pakistan. Ready to collaborate on your next project?<br>
+                hariskhan936.hk@gmail.com | +923335965332</h4>
+            <div class="contact-card">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" " autocomplete="off">
+                        <label for="name">Name</label>
+                        <i class="fa-solid fa-user input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" " autocomplete="off">
+                        <label for="email">Email</label>
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Message</label>
+                        <i class="fa-solid fa-comment input-icon"></i>
+                    </div>
+                    <button type="submit" class="btn-resume btn-submit">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2 class="footer-logo">Haris<span class="purple-text">Khan</span></h2>
+                <p class="footer-tagline">Innovation at the Intersection of Code and Design!</p>
+            </div>
+
+            <ul class="footer-nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#profiles">Profiles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/haris936hk/" target="_blank" class="social-link linkedin" aria-label="LinkedIn"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="http://github.com/haris936hk" target="_blank" class="social-link github" aria-label="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="mailto:hariskhan936.hk@gmail.com" target="_blank" class="social-link email" aria-label="Email"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Haris Khan. All rights reserved.</p>
+            <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="3d_background.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
