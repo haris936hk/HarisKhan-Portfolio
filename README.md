@@ -27,18 +27,25 @@ Portfolio project content is sourced from `Docs/Haris_Khan_Projects (1).pdf`:
 13 case studies in PDF order, comprising 11 freelance projects and 2 hobby projects.
 Cards reflect the document's project names, statuses, scope, and technology stacks.
 The existing layout, styles, animation logic, and interactions are retained.
-Each Case Study button opens the supplied PDF at its corresponding page (2–14);
-GitHub links are not shown on project cards.
+Each Case Study button opens its project's individual PDF from
+`Docs/Project Case Studies/` in a new tab; GitHub links are not shown on project cards.
 Other portfolio content includes Haris Khan's resume, 30 certificate PDFs,
 profile links, and professional portrait.
+The work-experience timeline follows `Docs/Haris_Khan_Resume.pdf`, with roles,
+employers, dates, and descriptions shown in reverse chronological order.
 Certificate previews are rendered from the supplied PDFs, with credential links
 opening the originals.
+Certificate previews use resized WebP assets and load as they approach the viewport;
+their original PDF credentials remain available through the links. The profile
+portrait and company logos are also lazy-loaded. The startup animation waits for
+page readiness rather than offscreen images or analytics, and uses a shorter
+intro so the homepage is visible sooner.
+
 
 The **View Resume** button opens `Docs/Haris%20Resume.pdf` in a new browser tab.
 The **Let's Connect** button scrolls to the contact form on the same page.
-Certificates are ordered by development relevance: Cisco JavaScript Essentials and
-IBM web-development courses first, followed by programming and infrastructure
-credentials, with game development, Office, design, and marketing courses at the end.
+Certificates named in `Docs/Haris_Khan_Resume.pdf` appear first in resume order;
+the remaining certificates follow in their existing order.
 
 ### Project video demos
 
@@ -95,9 +102,17 @@ environment; set the recipient to `hariskhan936.hk@gmail.com`.
 ### GSAP Animation System
 **Hero Intro & ScrollTriggers:**
 - Sequenced timeline animations with overlapping tweens (Power2.out easing)
-- **Timeline Items:** Slide in organically from their respective sides
+- **Timeline Items:** Reveal vertically at widths up to 1024px. Wider layouts slide in from their respective sides, with travel limited to the available viewport gutter and recalculated on resize.
 - **Projects/Skills Grids:** Staggered reveals with a subtle bounce (`back.out`) and wave-like ripple effects
 - **Dynamic Replays:** Uses `toggleActions: "play none none reverse"` to smoothly replay animations when scrolling back up.
+
+### Mobile layout
+
+- At widths up to 768px, the animated hero heading scales with the viewport so the longest role, `PROGRAMMER`, fits without clipping.
+- The bottom navigation scrolls horizontally when its seven items do not fit. The active tab scrolls into view, and its highlight stays aligned within the scroller.
+- Mobile experience cards share consistent padding; dates remain in normal flow below their cards. Company tags wrap within the card.
+- Hero buttons enter vertically, and decorative icons keep their horizontal positions during entrance animations to avoid expanding the viewport during startup.
+- For responsive QA, check 320px, 390px, and 430px portrait widths, 844px landscape, and the 768px/1024px breakpoints. Watch startup and a full typing cycle, swipe the navigation to Contact, and resize without reloading. The document width should stay equal to the viewport width; pinch zoom remains enabled.
 
 ### Secure Backend Architecture
 Instead of exposing API keys in client-side JavaScript, this portfolio employs a **Vercel Serverless Function** (`api/submit.js`). 

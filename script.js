@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPortfolioApp() {
     const videoModal = document.getElementById('projectVideoModal');
     const videoPlayer = document.getElementById('projectVideoPlayer');
     const videoTitle = document.getElementById('projectVideoTitle');
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typingText) {
         // Wait for preloader to finish before starting the hero animation
-        if (document.getElementById('preloader')) {
+        if (document.getElementById('preloader') && !window.__preloaderCompleted) {
             window.addEventListener('preloaderComplete', type, { once: true });
         } else {
             type();
@@ -126,24 +126,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorDot = document.querySelector('[data-cursor-dot]');
     const cursorOutline = document.querySelector('[data-cursor-outline]');
 
-    window.addEventListener('mousemove', function (e) {
-        const posX = e.clientX;
-        const posY = e.clientY;
+    if (cursorDot && cursorOutline) {
+        window.addEventListener('mousemove', function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
 
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
 
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
 
-    const interactables = document.querySelectorAll('a, button, .floating-icon');
-    interactables.forEach(el => {
-        el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
-        el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
-    });
+        const interactables = document.querySelectorAll('a, button, .floating-icon');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => cursorOutline.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hovered'));
+        });
+    }
 
     const timelineSections = document.querySelectorAll('.timeline');
 
@@ -389,7 +391,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPortfolioApp);
+} else {
+    initPortfolioApp();
+}
 
 // ══════════════════════════════════════════
 //  PRELOADER
@@ -400,25 +408,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const particlesContainer = document.getElementById('preloaderParticles');
     if (!preloader) return;
 
-    const DURATION = 3500;         // Total animation duration in ms
+    const DURATION = 1200;         // Total animation duration in ms
     const startTime = performance.now();
     let pageLoaded = false;
     let animationDone = false;
+    let dismissing = false;
 
     // ── Spawn floating particles ──
     if (particlesContainer) {
+        const fragment = document.createDocumentFragment();
         for (let i = 0; i < 100; i++) {
             const p = document.createElement('div');
             p.classList.add('preloader-particle');
             p.style.left = Math.random() * 100 + '%';
             p.style.bottom = -(Math.random() * 20) + '%';
 
-            // Sync with the ~3.5s DURATION. Duration between 2s and 4s, delay up to 1.5s
+            // Particle animations continue while the preloader is visible.
             p.style.animationDuration = (2 + Math.random() * 2) + 's';
             p.style.animationDelay = (Math.random() * 1.5) + 's';
             p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
-            particlesContainer.appendChild(p);
+            fragment.appendChild(p);
         }
+        particlesContainer.appendChild(fragment);
     }
 
     // ── Smooth linear animation via requestAnimationFrame ──
@@ -452,7 +463,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Dismiss only when BOTH animation is done AND page is loaded ──
     function tryDismiss() {
-        if (!animationDone || !pageLoaded) return;
+        if (!animationDone || !pageLoaded || dismissing) return;
+        dismissing = true;
 
         setTimeout(() => {
             preloader.classList.add('loaded');
@@ -460,15 +472,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 preloader.remove();
                 // Dispatch event to tell landing page to start animating
                 document.body.classList.add('page-loaded');
+                window.__preloaderCompleted = true;
                 window.dispatchEvent(new Event('preloaderComplete'));
             }, 1000);
-        }, 500);
+        }, 100);
     }
 
-    window.addEventListener('load', () => {
+    function markPageLoaded() {
+        if (pageLoaded) return;
         pageLoaded = true;
         tryDismiss();
-    });
+    }
+
+    // Essential page readiness: DOM is parsed and interactive, stylesheets are active,
+    // and core scripts have executed. Do not block preloader dismissal on optional/late
+    // resources (such as offscreen images, third-party analytics, or background assets).
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        markPageLoaded();
+    } else {
+        document.addEventListener('DOMContentLoaded', markPageLoaded, { once: true });
+        window.addEventListener('load', markPageLoaded, { once: true });
+    }
+
+    // Maximum fallback safety timeout: prevent any delayed or stalled optional/late
+    // resources from keeping the preloader active indefinitely.
+    setTimeout(markPageLoaded, DURATION + 1500);
 })();
 
 // ══════════════════════════════════════════
@@ -510,11 +538,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const pillRect = pill.getBoundingClientRect();
         const linkRect = activeLink.getBoundingClientRect();
 
-        const left = linkRect.left - pillRect.left;
+        const left = linkRect.left - pillRect.left + pill.scrollLeft - pill.clientLeft;
         const width = linkRect.width;
 
         indicator.style.left = left + 'px';
         indicator.style.width = width + 'px';
+
+        if (pill.scrollWidth > pill.clientWidth) {
+            pill.scrollTo({
+                left: Math.max(0, left - (pill.clientWidth - width) / 2),
+                behavior: 'smooth'
+            });
+        }
     }
 
     // ── Set active link ──

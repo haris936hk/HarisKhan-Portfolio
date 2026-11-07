@@ -115,13 +115,13 @@ if (hero) {
             "-=0.5"
         )
         .fromTo(".hero-buttons .btn-resume:first-child",
-            { opacity: 0, x: -50 },
-            { opacity: 1, x: 0 },
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0 },
             "-=0.5"
         )
         .fromTo(".hero-buttons .btn-resume:last-child",
-            { opacity: 0, x: 50 },
-            { opacity: 1, x: 0 },
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0 },
             "<"
         );
 }
@@ -145,23 +145,38 @@ document.querySelectorAll('.section-title').forEach(title => {
 });
 
 
-const timelineItems = document.querySelectorAll('.timeline-item');
-timelineItems.forEach((item) => {
-    const isLeft = item.classList.contains('left');
-    gsap.fromTo(item,
-        { opacity: 0, x: isLeft ? -80 : 80 },
-        {
-            opacity: 1,
-            x: 0,
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: item,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
+gsap.matchMedia().add({
+    mobile: "(max-width: 1024px)",
+    all: "all"
+}, ({ conditions }) => {
+    document.querySelectorAll('.timeline-item').forEach((item) => {
+        const isLeft = item.classList.contains('left');
+        gsap.fromTo(item,
+            {
+                opacity: 0,
+                x: () => {
+                    if (conditions.mobile) return 0;
+                    const bounds = item.parentElement.getBoundingClientRect();
+                    const gutter = isLeft ? bounds.left : document.documentElement.clientWidth - bounds.right;
+                    return (isLeft ? -1 : 1) * Math.min(80, Math.max(0, gutter));
+                },
+                y: conditions.mobile ? 30 : 0
+            },
+            {
+                opacity: 1,
+                x: 0,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                    invalidateOnRefresh: true,
+                    toggleActions: "play none none reverse"
+                }
             }
-        }
-    );
+        );
+    });
 });
 
 
