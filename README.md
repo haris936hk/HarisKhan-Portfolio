@@ -33,6 +33,9 @@ Other portfolio content includes Haris Khan's resume, 30 certificate PDFs,
 profile links, and professional portrait.
 The work-experience timeline follows `Docs/Haris_Khan_Resume.pdf`, with roles,
 employers, dates, and descriptions shown in reverse chronological order.
+Company logos are stored locally from the websites of
+[Nexus](https://nexus.pk/), [InoTech](https://www.inotechsoln.com/),
+[Eziline](https://www.eziline.com/), and [Samhan](https://samhantech.com/).
 Certificate previews are rendered from the supplied PDFs, with credential links
 opening the originals.
 Certificate previews use resized WebP assets and load as they approach the viewport;
@@ -63,6 +66,8 @@ require pressing Play. Close using Escape, the close button, or the backdrop.
 Closing removes the player, restores scrolling and focus, and reopening creates a
 fresh player from the beginning. Actual playback and autoplay depend on Drive
 permissions and the visitor's browser.
+The player keeps a minimum height of 300px so Drive's playback controls fit on
+narrow screens; the dialog scrolls when the viewport is short.
 
 Contact delivery still requires `RESEND_API_KEY` and `RECEIVER_EMAIL` in the deployment
 environment; set the recipient to `hariskhan936.hk@gmail.com`.
