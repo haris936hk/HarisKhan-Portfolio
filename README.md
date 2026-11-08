@@ -1,4 +1,4 @@
-# DevHQ : Personal Portfolio Website
+# HK : Personal Portfolio Website
 
 <div align="center">
   
@@ -18,6 +18,9 @@
 ---
 
 ## Overview
+
+The portfolio URL used for canonical links, social previews, and the sitemap is
+https://hariskhan-portfolio-chi.vercel.app/.
 
 A cutting-edge personal portfolio featuring a **3D animated starfield background** built with Three.js and professional **scroll-triggered animations** powered by GSAP. This portfolio showcases advanced web technologies including WebGL rendering, custom particle systems, and sophisticated motion design. 
 
