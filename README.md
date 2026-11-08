@@ -53,6 +53,19 @@ The **Let's Connect** button scrolls to the contact form on the same page.
 Certificates named in `Docs/Haris_Khan_Resume.pdf` appear first in resume order;
 the remaining certificates follow in their existing order.
 
+### Upwork client credibility
+
+The `#reviews` section sits between Projects and Skills, with Top Rated status,
+Job Success, total jobs, a client rating, and two attributed review excerpts.
+The footer links directly to this section; the floating navigation is unchanged.
+Metrics and quotations are maintained manually in `index.html`, not fetched from
+Upwork. The initial values (Top Rated, 100% Job Success, 8 total jobs, 5.0/5)
+were checked against the [public profile](https://www.upwork.com/freelancers/~019ff7988ce816904f)
+on November 8, 2026. Recheck the profile before updating these claims.
+Review counts are intentionally omitted. Excerpts contain only verified complete
+sentences from the public previews; use original review text for longer quotations.
+The award icon is decorative, not an official Upwork badge asset.
+
 ### Project video demos
 
 To enable a project video, add

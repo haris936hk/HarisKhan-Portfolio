@@ -2681,3 +2681,197 @@ body {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* Upwork credibility and client feedback */
+.reviews-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    position: relative;
+    z-index: 2;
+    scroll-margin-top: 90px;
+}
+
+.upwork-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 32px 0;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.upwork-metric {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 20px;
+    text-align: center;
+}
+
+.upwork-metric + .upwork-metric {
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.upwork-metric dt {
+    color: #d1d5db;
+    font-size: 0.9rem;
+}
+
+.upwork-metric dd {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.upwork-metric .upwork-status {
+    font-size: 1.7rem;
+}
+
+.upwork-status i {
+    color: var(--accent-purple);
+    margin-right: 5px;
+}
+
+.upwork-rating-scale {
+    color: #d1d5db;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-stars {
+    color: var(--accent-purple);
+    letter-spacing: 4px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.testimonial-card blockquote {
+    margin: 0 0 28px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.testimonial-card figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.testimonial-client {
+    font-weight: 600;
+}
+
+.testimonial-contract {
+    color: #d1d5db;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.testimonial-source {
+    color: #a1a1aa;
+    font-size: 0.8rem;
+}
+
+.reviews-action {
+    margin-top: 36px;
+    text-align: center;
+}
+
+.reviews-action a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 6px;
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    .testimonial-card:hover {
+        border-color: rgba(168, 85, 247, 0.5);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(168, 85, 247, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .upwork-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 12px 0;
+    }
+
+    .upwork-metric {
+        padding: 24px 12px;
+    }
+
+    .upwork-metric:nth-child(3) {
+        border-left: 0;
+    }
+
+    .upwork-metric:nth-child(n + 3) {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-section {
+        padding: 60px 20px;
+        scroll-margin-top: 20px;
+    }
+
+    .upwork-metric dd {
+        font-size: 2rem;
+    }
+
+    .upwork-metric .upwork-status {
+        font-size: 1.25rem;
+    }
+
+    .reviews-action .btn-resume {
+        padding: 12px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-card,
+    .reviews-action .btn-resume {
+        transition: none;
+    }
+
+    .reviews-action .btn-resume::before {
+        animation: none;
+    }
+}
