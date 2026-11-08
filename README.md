@@ -52,7 +52,7 @@ the remaining certificates follow in their existing order.
 
 ### Project video demos
 
-Project videos use a shared responsive native dialog. To enable a project, add
+To enable a project video, add
 `data-drive-video-id="DRIVE_FILE_ID"` to its `.experience-card` in `#projects`
 in `index.html`. Use the file ID from the Drive sharing URL, not the whole URL,
 and allow visitors to view the file without signing in. All 13 projects have video
@@ -60,14 +60,12 @@ mappings extracted from the embedded hyperlinks on their corresponding pages in
 `Docs/Haris_Khan_Projects (1).pdf`.
 
 Configured cards gain a **Watch Demo** button; clicking the card itself also opens
-the video. PDF links remain independent. The dialog requests autoplay
-with a muted playback hint and iframe autoplay permission; Google Drive may still
-require pressing Play. Close using Escape, the close button, or the backdrop.
-Closing removes the player, restores scrolling and focus, and reopening creates a
-fresh player from the beginning. Actual playback and autoplay depend on Drive
-permissions and the visitor's browser.
-The player keeps a minimum height of 300px so Drive's playback controls fit on
-narrow screens; the dialog scrolls when the viewport is short.
+the video. On screens up to 768px wide and devices with a coarse primary pointer,
+the video opens in a new Google Drive tab. On other devices it opens in a shared
+dialog, which requests autoplay with a muted playback hint; Google Drive may still
+require pressing Play. Close the dialog using Escape, the close button, or the
+backdrop. Closing removes the player and restores scrolling and focus. PDF links
+remain independent. Playback depends on Drive permissions and the browser.
 
 Contact delivery still requires `RESEND_API_KEY` and `RECEIVER_EMAIL` in the deployment
 environment; set the recipient to `hariskhan936.hk@gmail.com`.

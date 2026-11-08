@@ -5,8 +5,29 @@ function initPortfolioApp() {
     const videoTitle = document.getElementById('projectVideoTitle');
     let videoTrigger = null;
     let previousOverflow = '';
+    const mobileVideo = window.matchMedia('(max-width: 768px), (pointer: coarse)');
+
+    function updateVideoButton(button) {
+        if (mobileVideo.matches) {
+            button.removeAttribute('aria-haspopup');
+            button.removeAttribute('aria-controls');
+            button.setAttribute('aria-label', `Watch ${button.closest('.experience-card').querySelector('h3').textContent.trim()} demo (opens in a new tab)`);
+        } else {
+            button.setAttribute('aria-haspopup', 'dialog');
+            button.setAttribute('aria-controls', 'projectVideoModal');
+            button.setAttribute('aria-label', `Watch ${button.closest('.experience-card').querySelector('h3').textContent.trim()} demo`);
+        }
+    }
+
+    mobileVideo.addEventListener('change', () => {
+        document.querySelectorAll('#projects .has-project-video button.primary-btn').forEach(updateVideoButton);
+    });
 
     function openProjectVideo(card, trigger) {
+        if (mobileVideo.matches) {
+            window.open(`https://drive.google.com/file/d/${encodeURIComponent(card.dataset.driveVideoId)}/view`, '_blank', 'noopener,noreferrer');
+            return;
+        }
         if (videoModal.open) return;
         const title = card.querySelector('h3').textContent.trim();
         const frame = document.createElement('iframe');
@@ -28,10 +49,8 @@ function initPortfolioApp() {
         button.type = 'button';
         button.className = 'project-btn primary-btn';
         button.textContent = 'Watch Demo';
-        button.setAttribute('aria-label', `Watch ${card.querySelector('h3').textContent.trim()} demo`);
-        button.setAttribute('aria-haspopup', 'dialog');
-        button.setAttribute('aria-controls', 'projectVideoModal');
         card.querySelector('.project-links-wrapper').prepend(button);
+        updateVideoButton(button);
         card.classList.add('has-project-video');
         button.addEventListener('click', () => openProjectVideo(card, button));
         card.addEventListener('click', event => {
